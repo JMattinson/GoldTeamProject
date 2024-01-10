@@ -1,0 +1,1 @@
+this is a text document to check that git it sall set up correctly
