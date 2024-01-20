@@ -65,7 +65,12 @@ $RECYCLE.BIN/
 *.lnk
 *.userprefs
 *.csproj
+
 ScriptingForArtists/ScriptingForArtists-csharp.sln
 GoldTeamProjMain/.idea/.idea.GoldTeamProjMain/.idea/
-
+GoldTeamProjMain/.idea
 GoldTeamProjMain/UserSettings/Layouts/
+*.log
+*.bin
+
+.idea/.idea.GoldTeamKassFork.dir/.idea/
