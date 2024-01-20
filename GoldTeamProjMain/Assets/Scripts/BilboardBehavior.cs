@@ -8,7 +8,7 @@ public class BilboardBehavior : MonoBehaviour
 
     private void Start()
     {
-        focusCam = GameObject.Find("MainCamera").GetComponent<Camera>();
+        //focusCam = GameObject.Find("MainCamera").GetComponent<Camera>();
 
     }
 
