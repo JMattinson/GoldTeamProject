@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12de957548bec21429595826961abcfd, type: 3}
   m_Name: TestInvent
   m_EditorClassIdentifier: 
-  fuel: 0
+  fuel: 4
   scrap: 0
   wood: 0

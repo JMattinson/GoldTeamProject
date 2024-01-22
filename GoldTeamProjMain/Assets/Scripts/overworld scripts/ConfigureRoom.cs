@@ -1,33 +1,31 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 public class ConfigureRoom : MonoBehaviour
 {
     public GameObject nWall, sWall, eWall, wWall, floor;
 
-    public void SetWall(GameObject prefabb,GameObject Parentt)
-    {
-        Instantiate(prefabb,Parentt.transform);
-    }
-
-    //public void SetFloor(Material newMat) { }
-
-    public void setup(RoomData newRoom)
+    public void setup(RoomData newRoom)//we can create room datas to quickly build new areas
     {
         SetWall(newRoom.nWall,nWall);
         SetWall(newRoom.eWall,eWall);
         SetWall(newRoom.sWall,sWall);
         SetWall(newRoom.wWall,wWall);
-        //SetFloor(newroom.floorTex);
+        SetWall(newRoom.floor,floor);
     }
-
-    public UnityEvent testEvent ;
+    public void SetWall(GameObject prefabb,GameObject Parentt)//creates an instance of the wall prefab as a child
+    {//its easier to swap game objs than to change tex so the floor gets changed using this method too
+        if (Parentt.transform.childCount!=0)
+        {
+            Destroy(Parentt.transform.GetChild(0));//clears out old wall
+        }
+        Instantiate(prefabb,Parentt.transform);//new wall as child
+    }
+    
+    public UnityEvent SwapEvent ;
 
     public void Start()
     {
-        testEvent.Invoke();
+        SwapEvent.Invoke();
     }
 }
