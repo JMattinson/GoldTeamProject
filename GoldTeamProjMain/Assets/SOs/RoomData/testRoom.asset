@@ -17,3 +17,9 @@ MonoBehaviour:
   eWall: {fileID: 2748769717227633501, guid: 3d298e03d163ebd439f0beee98f4ee12, type: 3}
   wWall: {fileID: 1904902720170607474, guid: 928ba933446902c46909c3911a93fe7d, type: 3}
   floor: {fileID: 8329882326169817342, guid: 5391cdfa16f3f2c4081b64564a31cfc1, type: 3}
+  contentObjs:
+  - {fileID: 2230953870841095442, guid: 476bd0652be3c6b4d841dcd283a1c980, type: 3}
+  - {fileID: 2230953870841095442, guid: 476bd0652be3c6b4d841dcd283a1c980, type: 3}
+  locations:
+  - {x: 500, y: 0, z: 80}
+  - {x: 510, y: 0, z: 90}

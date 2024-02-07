@@ -7,6 +7,8 @@ public class NodeBeh : MonoBehaviour
     private GameObject drops;
     private Rigidbody bouncy;
     
+    //make sure the resourse node visuals have collison so the player cant walk through it.
+    
     public void SpawnDrops(int dropNum)
     {//this code will spawn the specified number of drops slightly above the node, and launch them slightly
         //you can also add multiple types of drops and it will randomly choose one
