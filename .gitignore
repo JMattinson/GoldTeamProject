@@ -70,7 +70,9 @@ ScriptingForArtists/ScriptingForArtists-csharp.sln
 GoldTeamProjMain/.idea/.idea.GoldTeamProjMain/.idea/
 GoldTeamProjMain/.idea
 GoldTeamProjMain/UserSettings/Layouts/
+GoldTeamProjMain/UserSettings/
 *.log
 *.bin
+*.idea
 
 .idea/.idea.GoldTeamKassFork.dir/.idea/
