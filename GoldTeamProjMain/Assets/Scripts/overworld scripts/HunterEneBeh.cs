@@ -6,16 +6,12 @@ public class HunterEneBeh : MonoBehaviour
 {
     //this is just a butchered/edited version of jaden's EnemyBipedBehavior code
     
-     [Header("Entity Management")]
     public UnityEvent deathEv, attackEv, dmgEv;
-    public float MaxHp, CurrentHp;
-    public UnityAction<ImageBehavior> UpdateImage;
-
-
-    [Header("Navigation")]
-    public Transform playerPos; 
+    public float MaxHp, CurrentHp, AtkRng, MvSpeed;
+    //public UnityAction<ImageBehavior> UpdateImage;
+    
+    private Transform playerPos;
     private NavMeshAgent agent;
-    public LayerMask Ground, Player;
     
     public void Start()
     {
@@ -23,17 +19,19 @@ public class HunterEneBeh : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         playerPos = GameObject.Find("Player").transform;
     }
-    public void Hunt()
+    public void Hunt()//gets called when player enters the hunt range collison
     {
-        //if you are not within attack range, then move towards player
-        if (playerPos)//if your close enough to attack then stop moving and hit it
+        //if your close enough to attack then stop moving and hit it
+        if ((Vector3.Distance(gameObject.transform.position,playerPos.position))<=AtkRng)
         {
             // use an animator/animation to make the weapon swing and have some down time
             agent.SetDestination(transform.position);
+            agent.speed = 0;
             attackEv.Invoke();
         }
-        else
+        else//if you are not within attack range, then move towards player
         {
+            agent.speed = MvSpeed;
             agent.SetDestination(playerPos.position);
         }
     }

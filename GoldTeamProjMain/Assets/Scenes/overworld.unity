@@ -2462,15 +2462,10 @@ MonoBehaviour:
   dmgEv:
     m_PersistentCalls:
       m_Calls: []
-  MaxHp: 0
+  MaxHp: 10
   CurrentHp: 0
-  playerPos: {fileID: 0}
-  Ground:
-    serializedVersion: 2
-    m_Bits: 0
-  Player:
-    serializedVersion: 2
-    m_Bits: 0
+  AtkRng: 0
+  MvSpeed: 0
 --- !u!114 &291500120
 MonoBehaviour:
   m_ObjectHideFlags: 0
