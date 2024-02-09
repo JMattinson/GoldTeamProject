@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,15 +8,16 @@ public class ConfigureRoom : MonoBehaviour
     public UnityEvent SwapEvent ;
 
     private int loopingNum;
-    private GameObject[] currentMisc;
+    public List<GameObject> currentMisc;
 
     //this is a funtion that can be called from anything
     public void setup(RoomData newRoom)//we can create room datas to quickly build new areas
     {
-        foreach (var item in currentMisc)
+        foreach (var thingy in currentMisc)
         {
-            Destroy(item);
+            Destroy(thingy.gameObject);
         }
+        currentMisc.Clear();//idk if this is needed but it makes me feel better
         SetWall(newRoom.nWall,nWall);
         SetWall(newRoom.eWall,eWall);
         SetWall(newRoom.sWall,sWall);
@@ -25,12 +27,12 @@ public class ConfigureRoom : MonoBehaviour
         foreach (var item in newRoom.contentObjs)
         {
             //make sure that the objs in the first list match the transforms in the second list.
-            currentMisc[loopingNum]=Instantiate(newRoom.contentObjs[loopingNum],newRoom.locations[loopingNum],new Quaternion(0,0,0,0));
-            loopingNum++;
+            currentMisc.Add(Instantiate(newRoom.contentObjs[loopingNum],newRoom.locations[loopingNum],new Quaternion(0,0,0,0)));
+            loopingNum++;//kassidy stop being an idiot and trying to take this out, it wont work
         }
     }
-    
-    public void SetWall(GameObject prefabb,GameObject Parentt)//creates an instance of the wall prefab as a child
+
+    private void SetWall(GameObject prefabb,GameObject Parentt)//creates an instance of the wall prefab as a child
     {//its easier to swap game objs than to change tex so the floor gets changed using this method too
         if (Parentt.transform.childCount!=0)
         {

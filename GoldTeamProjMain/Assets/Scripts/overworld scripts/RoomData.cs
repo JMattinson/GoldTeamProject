@@ -2,11 +2,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class RoomData : ScriptableObject
 {
-    //holds data to quickly configure new rooms
-    //look in the prefab base folder to find the style you want and then copy the prefab and customise it
+    [Header("Holds data to quickly set up rooms")] //header adds a line of text in the editor
+    public string roomName;
     public GameObject nWall, sWall, eWall, wWall,floor;
-    //make sure these two match up properly
+    
+    [Header("add the objects you want to exist in the room")]
+    [Header("make sure the number of the lists match")]
+    [Tooltip("look in the prefab base folder to find the type of obj you want then create a prefab variant of that base and configure the variant")]
     public GameObject[] contentObjs;
-    // id recomend keeping they y val at 0 and then the x and z vals between 60-940
+    [Tooltip("id recomend Y val at 0. both x and z vals between 60-940")]
     public Vector3[] locations;
 }
