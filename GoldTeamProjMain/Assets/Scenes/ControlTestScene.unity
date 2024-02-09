@@ -2153,7 +2153,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 987638693987444038}
+=======
+  - component: {fileID: 2124400834894953155}
+  - component: {fileID: 2124400834894953156}
+  - component: {fileID: 2124400834894953157}
+  - component: {fileID: 2124400834894953158}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: DEF-shin.R.001
   m_TagString: Untagged
@@ -2395,6 +2402,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5337093300534771433}
@@ -2406,6 +2414,32 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1039758861158549597
+=======
+  m_GameObject: {fileID: 1598975648255484025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6b5333e87abbc478e89901b2e17ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: AttackCycle
+  combo: 0
+  maxCombo: 3
+  intputToCheck: {fileID: 0}
+--- !u!114 &2124400834894953158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598975648255484025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527a0f05835fe594e8b5bde018d002d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActionPressed: {fileID: 11400000, guid: 9ed33137a0e665b4792a4e8da0f8c77b, type: 2}
+--- !u!4 &2177932618077108428
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3493,6 +3527,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8811794549509139988}
@@ -3504,6 +3539,74 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2159231539495941918
+=======
+  m_GameObject: {fileID: 3820861050178420531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37d705c8e9115e439ec799186182634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {fileID: 11400000, guid: 28bbaf9020ca5ad4eb6aa4a1e5f3ca50, type: 2}
+  rotateSpeed: 1080
+  isIdleAnimStart: 0
+  variableJoystick: {fileID: 1433109819}
+  rb: {fileID: 3820861050178420529}
+  RunTrueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2124400834894953158}
+        m_TargetAssemblyTypeName: InputCheckBehavior, Assembly-CSharp
+        m_MethodName: ToggleOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2124400834894953156}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: Walking
+          m_BoolArgument: 0
+        m_CallState: 2
+  StopEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2124400834894953158}
+        m_TargetAssemblyTypeName: InputCheckBehavior, Assembly-CSharp
+        m_MethodName: ToggleOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2124400834894953156}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Walking
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &3820861050178420525
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
