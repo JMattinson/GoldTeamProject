@@ -9,7 +9,6 @@ public class IncrementalAnimationManager : MonoBehaviour
     public string parameterName;
     public int combo;
     public int maxCombo;
-    public BoolData intputToCheck;
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +24,7 @@ public class IncrementalAnimationManager : MonoBehaviour
             combo = targetAnimator.GetInteger(parameterName);
             combo++;
             targetAnimator.SetInteger(parameterName,combo);
+            print(combo);
         }
         
         
@@ -35,14 +35,16 @@ public class IncrementalAnimationManager : MonoBehaviour
         
             combo = targetAnimator.GetInteger(parameterName);
             combo--;
-            print(combo);
             targetAnimator.SetInteger(parameterName,combo);
+            print(combo);
+        
         
         
     }
     public void ResetAnim()
     {
         combo = 0; 
+        print("reset");
         targetAnimator.SetInteger(parameterName,0);
     }
 }

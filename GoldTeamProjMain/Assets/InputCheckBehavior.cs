@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputCheckBehavior : MonoBehaviour
 {
     public BoolData isActionPressed;
+    public string paramName;
+    public bool startPositon;
 
     private Animator targetAnimator;
     // Start is called before the first frame update
     void Start()
     {
         targetAnimator = GetComponent<Animator>();
+        isActionPressed.value = startPositon;
     }
 
     // Update is called once per frame
@@ -18,7 +19,8 @@ public class InputCheckBehavior : MonoBehaviour
     {
         if (isActionPressed.value)
         {
-            targetAnimator.SetTrigger("idle");
+            targetAnimator.SetTrigger(paramName);
+            
         }
             
         

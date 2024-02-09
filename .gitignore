@@ -67,3 +67,5 @@ $RECYCLE.BIN/
 *.csproj
 ScriptingForArtists/ScriptingForArtists-csharp.sln
 GoldTeamProjMain/.idea/.idea.GoldTeamProjMain/.idea/
+
+GoldTeamProjMain/Assets/Models/FemProtag.mb

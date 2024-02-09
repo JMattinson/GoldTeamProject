@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 568f2e74f97f6dd4cbcd9e2dd1dfad63, type: 3}
-  m_Name: IsPlayerAtk
+  m_Name: IsPlayerIdle
   m_EditorClassIdentifier: 
   value: 1
