@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12de957548bec21429595826961abcfd, type: 3}
-  m_Name: TestInvent
+  m_Script: {fileID: 11500000, guid: 568f2e74f97f6dd4cbcd9e2dd1dfad63, type: 3}
+  m_Name: IsPlayerIdle
   m_EditorClassIdentifier: 
-  fuel: 4
-  scrap: 0
-  wood: 0
-  wepDmg: 1
+  value: 1

@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 417477440209052701, guid: c21cc0b8a216cca4ba7924a116cbdf66, type: 3}
       propertyPath: m_Name
-      value: 10 wood
+      value: 10 wood drop
       objectReference: {fileID: 0}
     - target: {fileID: 4445634744860609586, guid: c21cc0b8a216cca4ba7924a116cbdf66, type: 3}
       propertyPath: death.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

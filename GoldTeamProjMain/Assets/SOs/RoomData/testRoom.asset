@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8cf72e3b6780c04eb80db781ab9a438, type: 3}
   m_Name: testRoom
   m_EditorClassIdentifier: 
+  roomName: basic test room
   nWall: {fileID: 6062513733296861338, guid: ce75732a8b8b02842aa09d37f6c51d02, type: 3}
   sWall: {fileID: 5385077976287129491, guid: 12c5909939ecbad4984ffc6e9d64f24e, type: 3}
   eWall: {fileID: 2748769717227633501, guid: 3d298e03d163ebd439f0beee98f4ee12, type: 3}
@@ -20,6 +21,8 @@ MonoBehaviour:
   contentObjs:
   - {fileID: 2230953870841095442, guid: 476bd0652be3c6b4d841dcd283a1c980, type: 3}
   - {fileID: 2230953870841095442, guid: 476bd0652be3c6b4d841dcd283a1c980, type: 3}
+  - {fileID: 3054770018492407416, guid: dbd24604101ea5f449c8fe090405f57b, type: 3}
   locations:
   - {x: 500, y: 0, z: 80}
-  - {x: 510, y: 0, z: 90}
+  - {x: 520, y: 0, z: 100}
+  - {x: 460, y: 0, z: 130}

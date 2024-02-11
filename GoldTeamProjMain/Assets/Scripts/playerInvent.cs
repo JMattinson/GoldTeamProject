@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class playerInvent : ScriptableObject
 {
-   public float fuel, scrap, wood;
+   public float fuel, scrap, wood,wepDmg;
 
    public void addFuel(float amt)
    {
@@ -36,5 +36,15 @@ public class playerInvent : ScriptableObject
          value = wood.ToString();
       }
       return value;
+   }
+
+   public void newWepDmg(float newVal)
+   {
+      wepDmg = newVal;
+   }
+
+   public float dmgVal()
+   {
+      return wepDmg;
    }
 }
