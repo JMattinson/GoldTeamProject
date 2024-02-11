@@ -7,6 +7,8 @@ public class JoystickPlayerControl : MonoBehaviour
     public float rotateSpeed;
     public bool isIdleAnimStart;
 
+    public BoolData CanWalk;
+
     public VariableJoystick variableJoystick;
     public Rigidbody rb;
     public UnityEvent RunTrueEvent,StopEvent;
@@ -16,7 +18,9 @@ public class JoystickPlayerControl : MonoBehaviour
         //Whoever coded Unity's new input system should be tried as a warcriminal.
         Vector3 movementDirection = new Vector3(variableJoystick.Horizontal, 0, variableJoystick.Vertical);
         movementDirection.Normalize();
-        transform.Translate(movementDirection * (speed.value * Time.deltaTime),Space.World);
+        
+            transform.Translate(movementDirection * (speed.value * Time.deltaTime ),Space.World);
+        
 
         if (movementDirection != Vector3.zero)
         {
@@ -29,6 +33,7 @@ public class JoystickPlayerControl : MonoBehaviour
         {
             isIdleAnimStart = false;
             StopEvent.Invoke();
+            print("Stopped!");
         }
         
         }
