@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -6,27 +7,43 @@ using UnityEngine.Events;
 public class gruntEneBeh : MonoBehaviour
 {
     public float maxhp, CurrentHp, atkRng;
-    public UnityEvent dmgEv, deathEv, atkEv;
+    public GameObject parent;
+    
     [Tooltip("check this if this enemy is suppose to patrol an area")]
     public bool PatrolingEnemy;
+    
     [Tooltip("locations in order for patrol route")]
-    public Vector3[] points;
+    public List<Vector3> points;
+
+    [Tooltip("pls ignore it needs to be public for math")]
+    public List<Vector3> editPoints;
+    
+    public UnityEvent dmgEv, deathEv, atkEv;
 
     private NavMeshAgent agent;
     private bool currentlyPatroling;
     private WaitForSeconds delay;
     private Transform playerPos,startLoc;
+    private int looping;
     
     // Start is called before the first frame update
     void Start()
     {
+        editPoints.Clear();
         CurrentHp = maxhp;
         agent=GetComponent<NavMeshAgent>();
         delay = new WaitForSeconds(1f);
         playerPos = GameObject.Find("Player").transform;
         startLoc = gameObject.transform;//patroling enemy needs to be placed on 1st patrol point
+        
         if (PatrolingEnemy==true)
         {
+            looping = 0;
+            foreach (var item in points)
+            {//nav mesh agents dont do local vs world coords, this math will do that for us
+                editPoints.Add(new Vector3((points[looping].x+parent.transform.position.x),0,(points[looping].z+parent.transform.position.z)));
+                looping++;
+            }
             currentlyPatroling = true;
             StartCoroutine(patrolLoop());
         }
@@ -35,18 +52,15 @@ public class gruntEneBeh : MonoBehaviour
     public void attack()
     {
         agent.SetDestination(playerPos.position);
+        StopCoroutine(patrolLoop());
         if (PatrolingEnemy==true)
         {
             currentlyPatroling = false;
-            StopCoroutine(patrolLoop());
         }
-
-        StartCoroutine(followPlr());
     }
 
     public void goHome()
     {
-        StopCoroutine(followPlr());
         agent.SetDestination(startLoc.position);
         if (PatrolingEnemy==true)
         {
@@ -69,14 +83,14 @@ public class gruntEneBeh : MonoBehaviour
 
     private IEnumerator patrolLoop()
     {
-        int looping = 0;
+        looping = 0;
         while (currentlyPatroling==true)
         {
             if (agent.hasPath==false)
             {
-                agent.SetDestination(points[looping]);
+                agent.SetDestination(editPoints[looping]);
                 looping++;
-                if (looping>points.Length)
+                if (looping>=points.Count)
                 {   //reset at the end of the list
                     looping = 0;
                 }
@@ -86,18 +100,4 @@ public class gruntEneBeh : MonoBehaviour
         yield return delay;
     }
     
-    private IEnumerator followPlr()//triggered by camp
-    {
-        while (Vector3.Distance(transform.position,playerPos.position)>0)//if you are not on top of player
-        {
-            agent.SetDestination(playerPos.position);
-            if (agent.remainingDistance<=atkRng)
-            {   //if you're close enough to attack then stop moving and hit it
-                agent.isStopped = true;
-                // use an animator/animation to make the weapon swing and have some down time
-                atkEv.Invoke();
-            }
-            yield return delay;
-        }
-    }
 }

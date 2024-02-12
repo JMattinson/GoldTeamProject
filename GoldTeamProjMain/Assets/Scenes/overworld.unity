@@ -247,69 +247,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 62275255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2308e012d70723447bf59a2645d069e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 935f712750e10674c8946b3e817bb9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerStartEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerEndEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2042710706}
-        m_TargetAssemblyTypeName: gruntEneBeh, Assembly-CSharp
-        m_MethodName: goHome
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 180884473}
-        m_TargetAssemblyTypeName: gruntEneBeh, Assembly-CSharp
-        m_MethodName: goHome
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  playerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2042710706}
-        m_TargetAssemblyTypeName: gruntEneBeh, Assembly-CSharp
-        m_MethodName: attack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 180884473}
-        m_TargetAssemblyTypeName: gruntEneBeh, Assembly-CSharp
-        m_MethodName: attack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  weaponEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  babies:
+  - {fileID: 180884473}
+  - {fileID: 2042710706}
 --- !u!1001 &107603844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -885,8 +828,8 @@ Transform:
   m_GameObject: {fileID: 180884471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28, y: 0, z: -28}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 997565822}
   m_Father: {fileID: 62275259}
@@ -907,6 +850,14 @@ MonoBehaviour:
   maxhp: 10
   CurrentHp: 10
   atkRng: 5
+  parent: {fileID: 62275255}
+  PatrolingEnemy: 1
+  points:
+  - {x: 28, y: 0, z: -28}
+  - {x: -34, y: 0, z: -30}
+  - {x: -36, y: 0, z: 34}
+  - {x: 31, y: 0, z: 35}
+  editPoints: []
   dmgEv:
     m_PersistentCalls:
       m_Calls: []
@@ -916,12 +867,6 @@ MonoBehaviour:
   atkEv:
     m_PersistentCalls:
       m_Calls: []
-  PatrolingEnemy: 1
-  points:
-  - {x: 28, y: 0, z: -28}
-  - {x: -34, y: 0, z: -30}
-  - {x: -36, y: 0, z: 34}
-  - {x: 31, y: 0, z: 35}
 --- !u!195 &180884474
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -932,7 +877,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1911,7 +1856,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 59e4faf24927edf4a82f463ad16f1c37, type: 2}
+  - {fileID: 2100000, guid: c569c280f0eb52a49a7b2a6b8b0cbcf8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2606,6 +2551,10 @@ MonoBehaviour:
   maxhp: 10
   CurrentHp: 10
   atkRng: 5
+  parent: {fileID: 62275255}
+  PatrolingEnemy: 0
+  points: []
+  editPoints: []
   dmgEv:
     m_PersistentCalls:
       m_Calls: []
@@ -2615,8 +2564,6 @@ MonoBehaviour:
   atkEv:
     m_PersistentCalls:
       m_Calls: []
-  PatrolingEnemy: 0
-  points: []
 --- !u!195 &2042710707
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2627,7 +2574,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2660,9 +2607,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042710705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -19.3, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 641208606}
   m_Father: {fileID: 62275259}
