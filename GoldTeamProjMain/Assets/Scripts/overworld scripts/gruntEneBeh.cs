@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class gruntEneBeh : MonoBehaviour
 {
-    public float maxhp, CurrentHp, atkRng;
+    public float atkRng;
     public GameObject parent;
     
     [Tooltip("check this if this enemy is suppose to patrol an area")]
@@ -30,7 +30,6 @@ public class gruntEneBeh : MonoBehaviour
     void Start()
     {
         editPoints.Clear();
-        CurrentHp = maxhp;
         agent=GetComponent<NavMeshAgent>();
         delay = new WaitForSeconds(1f);
         playerPos = GameObject.Find("Player").transform;
@@ -49,7 +48,7 @@ public class gruntEneBeh : MonoBehaviour
         }
     }
 
-    public void attack()
+    public void attack()//add code here so if they are close enough they will take a swipe
     {
         agent.SetDestination(playerPos.position);
         StopCoroutine(patrolLoop());
@@ -69,17 +68,7 @@ public class gruntEneBeh : MonoBehaviour
         }
     }
     
-    public void TakeDamage(playerInvent whereDmg)//call this from a trigger event scrpt
-    {
-        // can add complex code here to change for atk dmg vs def etc.
-        CurrentHp -= whereDmg.wepDmg;
-        dmgEv.Invoke();//this calls the health bar update
-        if (CurrentHp <= 0)
-        {
-            deathEv.Invoke();
-            Destroy(this.gameObject);
-        }
-    }
+
 
     private IEnumerator patrolLoop()
     {

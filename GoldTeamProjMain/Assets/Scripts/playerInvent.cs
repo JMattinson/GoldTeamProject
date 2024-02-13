@@ -3,26 +3,29 @@ using UnityEngine;
 
 public class playerInvent : ScriptableObject
 {
-   public float fuel, scrap, wood,wepDmg;
+   public int fuel, scrap, wood,wepDmg;
 
-   public void addFuel(float amt)
+   //simplify the code for changing vals, can i have one funtion handel all of them?
+      //maybe a funtion that accepts a string and then read it as (name,value)
+
+   public void addFuel(int amt)
    {
       fuel += amt;
    }
 
-   public void addScrap(float amt)
+   public void addScrap(int amt)
    {
       scrap += amt;
    }
 
-   public void addWood(float amt)
+   public void addWood(int amt)
    {
       wood += amt;
    }
 
-   public string report(string what)
+   public string reportRes(string what)
    {
-      string value = null;
+      string value = null;//local variable so we can respond with something
       if (what=="fuel"||what=="Fuel")
       {
          value = fuel.ToString();
@@ -37,14 +40,5 @@ public class playerInvent : ScriptableObject
       }
       return value;
    }
-
-   public void newWepDmg(float newVal)
-   {
-      wepDmg = newVal;
-   }
-
-   public float dmgVal()
-   {
-      return wepDmg;
-   }
+   
 }
