@@ -1,17 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class JoystickPlayerControl : MonoBehaviour
 {
     public FloatData speed;
     public float rotateSpeed;
+    private float rotateMod;
     public bool isIdleAnimStart;
 
-    public BoolData CanWalk;
+    private bool canPlayerMove;
 
     public VariableJoystick variableJoystick;
     public Rigidbody rb;
     public UnityEvent RunTrueEvent,StopEvent;
+
+    private void Start()
+    {
+        canPlayerMove = true;
+    }
 
     public void FixedUpdate()
     {
@@ -19,15 +26,16 @@ public class JoystickPlayerControl : MonoBehaviour
         Vector3 movementDirection = new Vector3(variableJoystick.Horizontal, 0, variableJoystick.Vertical);
         movementDirection.Normalize();
         
-            transform.Translate(movementDirection * (speed.value * Time.deltaTime ),Space.World);
+            transform.Translate(movementDirection * (speed.value * Time.deltaTime * (Convert.ToInt32(canPlayerMove)) ),Space.World);
         
 
         if (movementDirection != Vector3.zero)
         {
+            rotateMod = (0.25f + (0.75f * Convert.ToSingle(canPlayerMove)));
             isIdleAnimStart = true;
             RunTrueEvent.Invoke();
             Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,rotateSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation,(rotateSpeed * rotateMod) * Time.deltaTime);
         }
         else if (movementDirection == Vector3.zero && isIdleAnimStart)
         {
@@ -37,4 +45,13 @@ public class JoystickPlayerControl : MonoBehaviour
         }
         
         }
+
+    public void CallToggleMovementOn()
+    {
+        canPlayerMove = true;
+    }
+    public void CallToggleMovementOff()
+    {
+        canPlayerMove = false;
+    }
 }

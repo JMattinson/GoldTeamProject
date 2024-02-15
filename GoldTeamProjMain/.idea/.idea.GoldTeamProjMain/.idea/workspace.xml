@@ -12,7 +12,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../DyingEmbers/BurningEmbersMain/BurningEmbers/Assets/Scripts/StartAction.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameActionInvokerBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IncrementalAnimationManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovementAnimManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Core/Events/AnimatorMessageListener.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -91,7 +94,10 @@
       <workItem from="1705087025354" duration="10000" />
       <workItem from="1707160318469" duration="4566000" />
       <workItem from="1707170729011" duration="1052000" />
-      <workItem from="1707450768613" duration="3072000" />
+      <workItem from="1707450768613" duration="4301000" />
+      <workItem from="1707498216951" duration="228000" />
+      <workItem from="1707502020435" duration="2047000" />
+      <workItem from="1707710335046" duration="2053000" />
     </task>
     <servers />
   </component>

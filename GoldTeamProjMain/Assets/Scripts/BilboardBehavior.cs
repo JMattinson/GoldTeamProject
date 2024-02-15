@@ -1,5 +1,3 @@
-
-using System;
 using UnityEngine;
 
 public class BilboardBehavior : MonoBehaviour
