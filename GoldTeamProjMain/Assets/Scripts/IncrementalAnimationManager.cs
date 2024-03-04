@@ -38,7 +38,7 @@ public class IncrementalAnimationManager : MonoBehaviour
             targetAnimator.SetInteger(parameterName,combo);
             print(combo);
         
-        
+    
         
     }
     public void ResetAnim()
