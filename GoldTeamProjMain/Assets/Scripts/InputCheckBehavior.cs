@@ -20,6 +20,7 @@ public class InputCheckBehavior : MonoBehaviour
         if (isActionPressed.value)
         {
             targetAnimator.SetTrigger(paramName);
+            debug.log("nonsesnse")
             
         }
             

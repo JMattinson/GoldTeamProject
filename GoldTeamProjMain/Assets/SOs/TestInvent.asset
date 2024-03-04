@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d21e7e2d56f2147bbc2242f0f1b138, type: 3}
-  m_Name: EnCurrentHp
+  m_Script: {fileID: 11500000, guid: 12de957548bec21429595826961abcfd, type: 3}
+  m_Name: TestInvent
   m_EditorClassIdentifier: 
-  value: 100
-  onMinEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onMaxEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  fuel: 4
+  scrap: 0
+  wood: 0
+  wepDmg: 1

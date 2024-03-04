@@ -43,7 +43,7 @@ public class IncrementalAnimationManager : MonoBehaviour
             
         }
         
-        
+    
         
     }
     public void ResetAnim()
