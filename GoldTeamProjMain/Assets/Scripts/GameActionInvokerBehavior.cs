@@ -9,7 +9,7 @@ public class GameActionInvokerBehavior : MonoBehaviour
     public void InvokeGameAction()
     {
         targetAction.RaiseAction();
-        print("Calling"+targetAction);
+        
     }
      
 }

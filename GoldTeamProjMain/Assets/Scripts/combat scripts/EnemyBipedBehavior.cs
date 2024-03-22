@@ -54,6 +54,7 @@ public class EnemyBipedBehavior : EnemyBase
     public override void Attack()
     {
         agent.SetDestination(transform.position);
+        print("Player in range!");
         attackEvent.Invoke();
     }
 
@@ -95,16 +96,23 @@ public class EnemyBipedBehavior : EnemyBase
     {
         
         PlayerInAttack = Physics.CheckSphere(transform.position, attackRange,Player);
+        
         if (PlayerInSight)
         {
             noAttackEvent.Invoke();
+            
             Hunt();
             
         }
         if (PlayerInAttack)
         {
             attackEvent.Invoke();
-            Hunt();
+            
+            //Hunt();
+        }
+        else
+        {
+            noAttackEvent.Invoke();
         }
 
     }
